@@ -121,7 +121,7 @@ public class Vika_Panel extends JPanel implements Runnable {
             if (firstTriangle.getRightConnection().equals(transact.getPosition()) && transact.getWorkPlace() == null) {
                 double i = Math.random();
                 //определение куда идти
-                if (i <= 0.3) {
+                if (i < 0.3) {
                     transact.setTrace(fromFtToEnd);
                     transact.setWorkPlace(pamv);
                     withPamv++;

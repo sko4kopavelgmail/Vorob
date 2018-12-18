@@ -19,9 +19,9 @@ public class StatisticGUI {
         textArea.append("Среднее количество сгенерированных транзактов = " + Statistic.instance.getTransactCount() + "\n");
         textArea.append("Среднее количество отклоненных транзактов = " + Statistic.instance.getDeclineCount() + "\n");
         textArea.append("Среднее количество обработанных транзактов = " + Statistic.instance.getDoneTransacts() + "\n");
-        textArea.append("Вероятность отказа = " + Statistic.instance.getDeclineCount()/Statistic.instance.getTransactCount()+"\n");
-        textArea.append("Желающие пойти на ПЭВМ " + Statistic.instance.getWithPamv() + "\n");
-        textArea.append("Желающие пойти сразу на Pc2 " + Statistic.instance.getWithoutPamv() + "\n");
+        textArea.append("Вероятность отказа = " + Statistic.instance.getDeclineCount()/Statistic.instance.getTransactCount()*100+"%\n");
+        textArea.append("Желающие пойти на ПЭВМ -" + Statistic.instance.getWithPamv() + "\n");
+        textArea.append("Желающие пойти сразу на Pc2 -" + Statistic.instance.getWithoutPamv() + "\n");
         textArea.append("\n");
         for (Circle circle : Statistic.instance.getCircles()) {
             textArea.append("\t" + circle.getTitle() + "\n");
