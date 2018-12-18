@@ -1,5 +1,6 @@
 package GUI.Utils.Components;
 
+import GUI.Utils.Utils;
 import lombok.Data;
 
 import java.awt.*;
@@ -13,6 +14,7 @@ public class Triangle {
     private Point leftConnection;
     private Point rightConnection;
     private int direction;
+    private int directPercent;
     public static final int UP = 1;
     public static final int DOWN = 2;
     public static final int NONE = 3;
@@ -27,21 +29,24 @@ public class Triangle {
     }
 
     private void init() {
-        leftConnection = new Point(leftDown.getX(),right.getY());
+        leftConnection = new Point(leftDown.getX(), right.getY());
         rightConnection = right;
 
     }
 
-    // TODO: 06.12.2018 Доделать направления
-    public void paint(Graphics graphics){
+    public void paint(Graphics graphics) {
         graphics.drawPolygon(
-                new int[]{leftTop.getX(),leftDown.getX(),right.getX()},
-                new int[]{leftTop.getY(), leftDown.getY(),right.getY()},
+                new int[]{leftTop.getX(), leftDown.getX(), right.getX()},
+                new int[]{leftTop.getY(), leftDown.getY(), right.getY()},
                 3);
-        switch (direction){
+        switch (direction) {
             case UP:
+                graphics.drawString(directPercent+"", rightConnection.getX(), rightConnection.getY()+Utils.SIZE/3);
+                graphics.drawString((100 - directPercent)+"", rightConnection.getX()-Utils.SIZE/2, rightConnection.getY() - Utils.SIZE/3);
                 break;
             case DOWN:
+                graphics.drawString(directPercent+"", rightConnection.getX(), rightConnection.getY()-Utils.BACKLASH);
+                graphics.drawString((100 - directPercent)+"", rightConnection.getX()-Utils.SIZE/2, rightConnection.getY() + Utils.SIZE/2);
                 break;
             case NONE:
                 break;

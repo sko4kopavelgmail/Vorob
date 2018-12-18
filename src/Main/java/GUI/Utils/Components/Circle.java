@@ -25,6 +25,10 @@ public class Circle {
         statistic_workTime++;
     }
 
+    public void workTime_statistic_dec(){
+        statistic_workTime--;
+    }
+
     public void transact_count_int(){
         transact_count++;
     }
@@ -46,7 +50,7 @@ public class Circle {
 
     public void paint(Graphics graphics){
         graphics.drawOval(x,y,d,d);
-        graphics.drawString(title, x + Utils.SIZE / 2 - Utils.BACKLASH, y + Utils.SIZE / 2 + Utils.BACKLASH*2);
+        graphics.drawString(title, center.getX()-Utils.BACKLASH, center.getY()+Utils.BACKLASH);
     }
 
     public void paint(Graphics graphics, int i){

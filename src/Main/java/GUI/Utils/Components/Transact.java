@@ -26,6 +26,7 @@ public class Transact {
     private int workTime = 0;
     private Circle workPlace;
     private boolean decline;
+    private boolean done;
 
     public void setTraceToNull(){
         this.trace = null;

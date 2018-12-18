@@ -63,6 +63,10 @@ public class Arrow {
             case UP:
                 break;
             case DOWN:
+                graphics.drawLine(lastPoint.getX(), lastPoint.getY(),
+                        lastPoint.getX() - Utils.BACKLASH, lastPoint.getY() - Utils.BACKLASH);
+                graphics.drawLine(lastPoint.getX(), lastPoint.getY(),
+                        lastPoint.getX() + Utils.BACKLASH, lastPoint.getY() - Utils.BACKLASH);
                 break;
             case LEFT:
                 break;

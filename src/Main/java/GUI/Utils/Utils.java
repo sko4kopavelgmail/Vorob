@@ -13,7 +13,7 @@ public class Utils {
     public static int BACKLASH = 5;
 
     //расстояние между объектами
-    public static int DIFFERENCE = 20;
+    public static int DIFFERENCE = 30;
 
     //размер транзакта
     public static int TRANSACT_SIZE = 10;
@@ -25,7 +25,7 @@ public class Utils {
     public static int DELAY = 0;
 
     //количество моделирований
-    public static int RUN_COUNT = 3;
+    public static int RUN_COUNT = 1;
 
     //среднее время генерации
     public static int GENERATE_TIME = 30;
@@ -34,7 +34,7 @@ public class Utils {
     public static int DEVIATION = 2;
 
     //время моделирования
-    public static int TIME = 60 * 100;
+    public static int TIME = 60 * 60;
 
     //количество транзакотов в очереди
     public static int QUEUE_TRANSACT_COUNT = 20;

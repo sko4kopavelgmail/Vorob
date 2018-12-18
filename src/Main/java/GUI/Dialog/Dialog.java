@@ -12,13 +12,13 @@ public class Dialog extends JDialog {
 
     public Dialog() {
         setTitle("Моделирование");
-        setSize(new Dimension(400, 250));
+        setSize(new Dimension(400, 200));
         setLocationRelativeTo(null);
         setResizable(false);
 
         //глобальные настройки
         grid = new JPanel();
-        GridLayout layout = new GridLayout(5, 0, 5, 12);
+        GridLayout layout = new GridLayout(3, 0, 5, 12);
         grid.setLayout(layout);
 
         //Задержка
@@ -37,20 +37,7 @@ public class Dialog extends JDialog {
         runCountPanel.add(runCountText);
         grid.add(runCountPanel);
 
-        //Разброс генерации
-        JPanel runDeviationPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        JLabel runDeviationLabel = new JLabel("Разброс генерации          :");
-        runDeviationPanel.add(runDeviationLabel);
-        JTextField runDeviationText = new JTextField(15);
-        runDeviationPanel.add(runDeviationText);
-        grid.add(runDeviationPanel);
-
-        JPanel solutionPanel = new JPanel(new FlowLayout((FlowLayout.CENTER)));
-        JCheckBox checkBox = new JCheckBox("Запуск решения");
-        solutionPanel.add(checkBox);
-        grid.add(solutionPanel);
-
-        //Разброс генерации
+        //Кнопочка
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JButton button = new JButton("Запуск");
         buttonPanel.add(button);
@@ -64,13 +51,6 @@ public class Dialog extends JDialog {
             if (!runCountText.getText().isEmpty()) {
                 Utils.RUN_COUNT = Integer.parseInt(runCountText.getText());
             }
-
-            if (!runDeviationText.getText().isEmpty()) {
-                Utils.DEVIATION = Integer.parseInt(runDeviationText.getText());
-            }
-
-            if (checkBox.isSelected())
-                Utils.IS_SOLUTION = true;
 
             new Frame();
             setVisible(false);

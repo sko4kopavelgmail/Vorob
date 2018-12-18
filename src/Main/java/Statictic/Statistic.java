@@ -17,6 +17,18 @@ public class Statistic {
     private double doneTransacts = 0;
     @Getter
     private ArrayList<Circle> circles;
+    @Getter
+    private int withPamv;
+    @Getter
+    private int withoutPamv;
+
+    public void setWithPamv(int withPamv) {
+        this.withPamv = withPamv / Utils.RUN_COUNT;
+    }
+
+    public void setWithoutPamv(int withoutPamv) {
+        this.withoutPamv = withoutPamv/Utils.RUN_COUNT;
+    }
 
     @Getter
     private int declineCount = 0;
